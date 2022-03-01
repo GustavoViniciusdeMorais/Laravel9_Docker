@@ -13,4 +13,7 @@ sudo docker exec -it laravel9_nginx_1 sh # pc local
 chmod -R 777 /var/www/html/storage/ # nginx container
 sudo docker inspect [CONTAINER ID] | grep IP # pc local, pega o ip do container mysql
 # precisa adicionar o IP do container mysql no .env do Laravel no DB_HOST
+sudo docker stop $(sudo docker ps -a -q) # pc local, parar todos os containers
+php artisan key:generate # php container
+php artisan config:cache # php container
 ```

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/gustavo', function(){
-    return "asfasdfadsf";
+Route::controller(PostsController::class)->group(function(){
+    Route::post('/posts', 'store');
+    Route::get('/posts', 'index');
 });
