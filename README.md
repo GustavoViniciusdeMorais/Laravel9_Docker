@@ -11,4 +11,6 @@ sudo cp -r l9/* . # pc local
 sudo rm -rf l9/ # pc local
 sudo docker exec -it laravel9_nginx_1 sh # pc local
 chmod -R 777 /var/www/html/storage/ # nginx container
+sudo docker inspect [CONTAINER ID] | grep IP # pc local, pega o ip do container mysql
+# precisa adicionar o IP do container mysql no .env do Laravel no DB_HOST
 ```
