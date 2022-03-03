@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    throw new Exception('adasdf'); // composer update, spatie/laravel-ignition
+    // throw new Exception('adasdf'); // composer update, spatie/laravel-ignition
     return view('welcome');
 });
 

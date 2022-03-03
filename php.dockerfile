@@ -21,6 +21,7 @@ RUN apk add php8-common \
     php8-pdo_mysql \
     php8-pdo_sqlite \
     php8-tokenizer \
-    php8-pecl-redis
+    php8-pecl-redis \
+    php8-dev
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql

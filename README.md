@@ -34,4 +34,17 @@ php artisan make:factory PostFactory
 php artisan tinker
 
 \App\Models\Comment::factory(10)->create(); # run inside tinker to build dummy data in the database
+
+apk add gcc g++ make libffi-dev openssl-dev # php container, required to install xdebug
+
+pecl install xdebug # php container
+
+php --ini # php container, shows where is the ini file
+
+nano /usr/local/etc/php/conf.d/99-xdebug.ini # php container, buid xdebug ini file
+# inside, put zend_extension=xdebug
+
+docker restart [CONTAINER ID] # pc local
+
+XDEBUG_MODE=coverage php artisan test --coverage # php container, to run test with xdebug
 ```
