@@ -15,7 +15,13 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $comments = Comment::all();
+
+            return response()->json($comments);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     /**

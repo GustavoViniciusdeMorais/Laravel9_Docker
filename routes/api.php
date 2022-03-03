@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostsController;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -42,3 +44,11 @@ Route::group(['prefix' => 'examples'], function(){
     });
 });
 
+Route::get('/search/{x}', function($x){
+    // print_r(json_encode([$x]));echo "\n\n";exit;
+    return Comment::search($x)->get();
+});
+
+Route::controller(CommentController::class, function(){
+    Route::get('/comments', 'index');
+});

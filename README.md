@@ -47,4 +47,7 @@ nano /usr/local/etc/php/conf.d/99-xdebug.ini # php container, buid xdebug ini fi
 docker restart [CONTAINER ID] # pc local
 
 XDEBUG_MODE=coverage php artisan test --coverage # php container, to run test with xdebug
+
+composer require laravel/scout # php container, install laravel scout
+php artisan vendor:publish # phpocntainer, publish scout
 ```
