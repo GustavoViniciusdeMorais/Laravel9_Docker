@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 /*
@@ -42,3 +44,8 @@ Route::get('/bladestring', function(){
     GUSTAVO;
     return Blade::render($text, $data);
 });
+
+# Scoped Binding is a way to filter the access of a given user to some resource
+Route::get('users/{user}/comments/{comment}', function(User $user, Comment $comment){
+    return $comment;
+})->scopeBindings();
