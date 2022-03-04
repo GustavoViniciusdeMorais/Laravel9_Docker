@@ -49,6 +49,6 @@ Route::get('/search/{x}', function($x){
     return Comment::search($x)->get();
 });
 
-Route::controller(CommentController::class, function(){
+Route::controller(CommentController::class)->group(function(){
     Route::get('/comments', 'index');
 });
